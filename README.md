@@ -13,8 +13,8 @@ Extract first referral documents for patients with a diagnosis of schizophrenia:
 
 Data filtering
 - calculate document length and average line length
-- calculate number of symptom keywords per document
-- calculate number of time expressions per document
+- calculate number of symptom keywords per document (from previously developed list)
+- calculate number of time expressions per document (from SUTimeMentalHealth)
 - apply filters (character length >= 50th percentile, average line length >= 25th percentile, at least 1 symptom keyword, more than 5 time expressions)
 
 Manual annotation
@@ -22,8 +22,9 @@ Manual annotation
 - manually annotate documents for onset mentions, with type (psychosis simptom, diagnosis, non-specific) and time information (past anchored, past not anchored, current)
 
 NLP development
-- divide documents in paragraphs and label paragraphs with 1 (contains a past anchored mention) or 0 (otherwise)
-- binary classification problem
+- divide documents in paragraphs 
+- apply filters: remove shorter paragraph and paragraphs without time expressions (from SUTimeMentalHealth)
+- binary classification problem: label paragraphs with 1 (if containing a past anchored mention) or 0 (otherwise)
 - model selection with 5-fold cross validation on training set, experimenting with different features (TF-IDF counts vs. embedding features), and supervised machine learning classifiers (LR, RF and SVM)
 
 Patient-level ranked list of likely onset dates
