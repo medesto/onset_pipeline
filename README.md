@@ -23,7 +23,7 @@ Manual annotation
 
 NLP development
 - divide documents in paragraphs 
-- apply filters: remove shorter paragraph and paragraphs without time expressions (from SUTimeMentalHealth)
+- apply filters: remove shorter paragraphs and paragraphs without time expressions (from SUTimeMentalHealth)
 - binary classification problem: label paragraphs with 1 (if containing a past anchored mention) or 0 (otherwise)
 - model selection with 5-fold cross validation on training set, experimenting with different features (TF-IDF counts vs. embedding features), and supervised machine learning classifiers (LR, RF and SVM)
 
